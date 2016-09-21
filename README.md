@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # README
-
+# Classmanagement
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -23,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# Classmanagement
->>>>>>> f509a739d5d45a9cdba2de5bf180af4ff22e736c
