@@ -1,0 +1,15 @@
+<h1>Classroom</h1>
+<p>
+  <b>Name:</b>
+  <%= @classroom.name %>
+</p>
+<p>
+  <b>Capacity:</b>
+  <%= @classroom.capacity %>
+</p>
+<p>
+  <b>Area:</b>
+  <%= @classroom.area %>
+</p>
+<%= link_to 'Edit', edit_classroom_path%>
+<%= link_to 'Back', classrooms_path%>

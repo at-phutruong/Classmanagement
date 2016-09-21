@@ -1,0 +1,17 @@
+<%= form_for(classroom) do |f| %>
+  <div class="classroom-name">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="classroom-capacity">
+    <%= f.label :capacity %>
+    <%= f.number_field :capacity %>
+  </div>
+  <div class="classroom-area">
+    <%= f.label :area %>
+    <%= f.text_field :area %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>
