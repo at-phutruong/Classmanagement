@@ -1,0 +1,13 @@
+<%= form_for(schedule) do |f| %>
+  <div class="schedule-classroom">
+    <%= f.label :classroom %>
+    <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
+  </div>
+  <div class="schedule-teacher">
+    <%= f.label :Teacher %>
+    <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
+  </div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
+<% end %>
