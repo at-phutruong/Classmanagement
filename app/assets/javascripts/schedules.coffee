@@ -1,5 +1,7 @@
 jQuery ->
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({
+    'dateFormat': 'DD, d MM, yy'
+    });
   $('.timepicker').timepicker({
     'scrollDefault': 'now'
     'minTime': '7:00am',

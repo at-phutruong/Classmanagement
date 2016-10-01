@@ -9,15 +9,15 @@
   </div>
   <div>
     <%= f.label :Date %>
-    <%= f.text_field :date, :class => 'datepicker', :placeholder => 'Select Date' %>
+    <%= f.text_field :date, :class => 'datepicker', :placeholder => 'Select Date', required: true %>
   </div>
   <div class="start-time">
     <%= f.label :Start %>
-    <%= f.text_field :start, :class => 'timepicker', placeholder: 'Select Start time'%>
+    <%= f.text_field :start, :class => 'timepicker', placeholder: 'Select Start time', required: true%>
   </div>
   <div class="end-time">
     <%= f.label :End %>
-    <%= f.text_field :end, :class => 'timepicker', placeholder: 'Select End time' %>
+    <%= f.text_field :end, :class => 'timepicker', placeholder: 'Select End time', required: true %>
   </div>
   <div class="action">
     <%= f.submit %>
