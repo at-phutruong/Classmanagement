@@ -24,6 +24,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'pry-rails'
 gem 'jquery-ui-rails'
+gem 'jquery-timepicker-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
