@@ -20,12 +20,12 @@
         <td><%= schedule.start %></td>
         <td><%= schedule.end %></td>
 
-        <td><%= link_to 'Show', schedule_path(schedule) %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-        <td><%= link_to 'Destroy', schedule_path(schedule), method: :delete, remote: true, format: :js %></td>
+        <td><%= link_to 'Show', schedule_path(schedule), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Edit', edit_schedule_path(schedule), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Destroy', schedule_path(schedule), class: 'btn btn-default', method: :delete, remote: true, format: :js %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<td><%= link_to 'New schedule', new_schedule_path %></td>
+<td><%= link_to 'New schedule', new_schedule_path, class: "btn btn-default" %></td>

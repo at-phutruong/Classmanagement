@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
-
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
