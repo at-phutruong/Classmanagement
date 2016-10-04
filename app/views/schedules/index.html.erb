@@ -12,20 +12,25 @@
     </tr>
   </thead>
   <tbody>
-    <% @schedule.each do |schedule| %>
+    <%= will_paginate %>
+    <% @schedules.each do |schedule| %>
       <tr class="<%= schedule.id %>">
         <td><%= schedule.date %></td>
         <td><%= schedule.classroom.name %></td>
         <td><%= schedule.teacher.name %></td>
         <td><%= schedule.start %></td>
         <td><%= schedule.end %></td>
-
-        <td><%= link_to 'Show', schedule_path(schedule), class: 'btn btn-default' %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule), class: 'btn btn-default' %></td>
-        <td><%= link_to 'Destroy', schedule_path(schedule), class: 'btn btn-default', method: :delete, remote: true, format: :js %></td>
+        <% if current_user.role.eql? 'admin' %>
+          | <td><%= link_to 'Show', schedule_path(schedule), class: 'btn btn-default' %></td>
+          | <td><%= link_to 'Edit', edit_schedule_path(schedule), class: 'btn btn-default' %></td>
+          | <td><%= link_to 'Destroy', schedule_path(schedule), class: 'btn btn-default', method: :delete, remote: true, format: :js %></td>
+        <% end %>
       </tr>
     <% end %>
+    <%= will_paginate %>
   </tbody>
 </table>
 <br>
-<td><%= link_to 'New schedule', new_schedule_path, class: "btn btn-default" %></td>
+<% if current_user.role == 'admin' || 'lecturer' %>
+  <td><%= link_to 'New schedule', new_schedule_path, class: "btn btn-default" %></td>
+<% end %>

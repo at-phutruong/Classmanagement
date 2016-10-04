@@ -27,6 +27,8 @@ gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
+gem 'will_paginate',           '3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

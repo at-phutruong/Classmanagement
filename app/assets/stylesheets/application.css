@@ -15,9 +15,9 @@
  *= require jquery-ui/datepicker
  *= require jquery.timepicker.css
  */
- /*@import "bootstrap-sprockets";
+ @import "bootstrap-sprockets";
  @import "bootstrap";
-
+/*
 body {
   padding-top: 60px;
 }
@@ -26,7 +26,7 @@ body {
   background: #FFF;
   font-family: 'OpenSansBold', sans-serif;
   border: 3px solid #000;
-  
+
   letter-spacing: 1px;
   border-radius: 1px;
   display: inline-block;
