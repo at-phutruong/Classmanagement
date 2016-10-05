@@ -1,8 +1,8 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
-  before_action :admin_user,    only: [:show, :edit, :update, :destroy, :new, :create]
-  before_action :lecturer_user, only: [:show, :new, :create]
-  before_action :student_user,  only: :show
+  # before_action :admin_user,    only: [:show, :edit, :update, :destroy, :new, :create]
+  # before_action :lecturer_user, only: [:show, :new, :create]
+  # before_action :student_user,  only: :show
 
   def index
     @schedules = Schedule.paginate(page: params[:page])
