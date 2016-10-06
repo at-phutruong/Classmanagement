@@ -14,12 +14,16 @@
         <td><%= classroom.name %></td>
         <td><%= classroom.capacity %></td>
         <td><%= classroom.area %></td>
-        <td><%= link_to 'Show', classroom_path(classroom) %></td>
-        <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
-        <td><%= link_to 'Destroy', classroom_path(classroom), method: :delete, remote: true, format: :js %></td>
+        <% if current_user.role.eql? 'admin' %>
+          <td><%= link_to 'Show', classroom_path(classroom) %></td>
+          <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
+          <td><%= link_to 'Destroy', classroom_path(classroom), method: :delete, remote: true, format: :js %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<td><%= link_to 'New classroom', new_classroom_path %></td>
+<% if current_user.role.eql? 'admin' %>
+  <%= link_to 'New classroom', new_classroom_path %>
+<% end %>

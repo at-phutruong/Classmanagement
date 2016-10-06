@@ -22,11 +22,14 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Debugger
 gem 'pry-rails'
+# Use for decoration
 gem 'jquery-ui-rails'
 gem 'jquery-timepicker-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
+# Use for pagination
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Use Redis adapter to run Action Cable in production

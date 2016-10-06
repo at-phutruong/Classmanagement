@@ -19,7 +19,7 @@ class SchedulesController < ApplicationController
       flash[:success] = 'You have created schedule successfully'
       redirect_to schedules_path
     else
-      flash[:danger] = 'Failed'
+      flash[:danger] = 'Failed to create!'
       redirect_to new_schedule_path
     end
   end
@@ -33,6 +33,7 @@ class SchedulesController < ApplicationController
       flash[:success] = 'You have edited schedule successfully'
       redirect_to schedules_path
     else
+      flash[:danger] = 'Failed to update!'
       render 'edit'
     end
   end

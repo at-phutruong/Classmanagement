@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to schedules_path
     else
-      flash[:danger] = 'Invalid email/password combination' # Not quite right!
+      flash[:danger] = 'Invalid email or password combination' 
       render 'new'
     end
   end
