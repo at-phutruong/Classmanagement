@@ -2,14 +2,14 @@ jQuery ->
   $('.datepicker').datepicker({
     'dateFormat': 'DD, d MM, yy'
     });
-  
+
   $('.timepicker').timepicker({
+    'timeFormat': 'H:i'
     'scrollDefault': 'now'
-    'minTime': '7:00am',
-    'maxTime': '9:00pm',
+    'minTime': '7:00',
+    'maxTime': '17:00',
     'step': 30;
     'disableTimeRanges': [
-        ['11:30am', '13:00pm'],
-        ['3am', '4:01am']
+        ['11:30', '13:00'],
     ]
     });
