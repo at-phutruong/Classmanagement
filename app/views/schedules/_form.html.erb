@@ -13,11 +13,11 @@
   </div>
   <div class="start-time">
     <%= f.label :Start %>
-    <%= f.text_field :start, :class => 'timepicker start_time', placeholder: 'Select Start time', required: true%>
+    <%= f.text_field :start, :class => 'timepicker start_time',id: 'start_time', placeholder: 'Select Start time', required: true%>
   </div>
   <div class="end-time">
     <%= f.label :End %>
-    <%= f.text_field :end, :class => 'timepicker end_time', placeholder: 'Select End time', required: true %>
+    <%= f.text_field :end, :class => 'timepicker end_time', id: 'end_time', placeholder: 'Select End time', required: true %>
   </div>
   <div class="action">
     <%= f.submit %>
