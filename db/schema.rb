@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005000029) do
+ActiveRecord::Schema.define(version: 20161015090017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admins", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "classrooms", force: :cascade do |t|
     t.string   "name"
@@ -32,12 +25,13 @@ ActiveRecord::Schema.define(version: 20161005000029) do
 
   create_table "schedules", force: :cascade do |t|
     t.string   "start"
-    t.string   "end"
+    t.string   "finish"
     t.integer  "classroom_id"
     t.integer  "teacher_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.date     "date"
+    t.string   "subject"
     t.index ["classroom_id"], name: "index_schedules_on_classroom_id", using: :btree
     t.index ["teacher_id"], name: "index_schedules_on_teacher_id", using: :btree
   end

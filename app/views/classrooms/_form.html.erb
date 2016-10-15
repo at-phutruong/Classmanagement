@@ -1,7 +1,7 @@
 <%= form_for(classroom) do |f| %>
   <div class="classroom-name">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, pattern: '[A-Z]\d{3}' %>
   </div>
   <div class="classroom-capacity">
     <%= f.label :capacity %>

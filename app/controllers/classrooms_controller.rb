@@ -12,7 +12,12 @@ class ClassroomsController < ApplicationController
       flash[:success] = 'You have created Classroom successfully'
       redirect_to classrooms_path
     else
-      flash[:danger] = 'Failed to create!'
+      if @classroom.errors.any?
+        @classroom.errors.full_messages.each do |message|
+          flash[:danger] = message
+        end
+      end
+      # flash[:danger] = 'Failed to create!'
       redirect_to new_classroom_path
     end
   end
@@ -29,7 +34,14 @@ class ClassroomsController < ApplicationController
       flash[:success] = 'You have edited Classroom successfully'
       redirect_to classrooms_path
     else
-      flash[:danger] = 'Failed to update!'
+      # binding.pry
+      if @classroom.errors.any?
+        @classroom.errors.full_messages.each do |message|
+          binding.pry
+          flash[:danger] = message
+        end
+      end
+      # flash[:danger] = 'Failed to update!'
       redirect_to edit_classroom_path
     end
   end

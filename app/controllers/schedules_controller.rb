@@ -19,7 +19,12 @@ class SchedulesController < ApplicationController
       flash[:success] = 'You have created schedule successfully'
       redirect_to schedules_path
     else
-      flash[:danger] = 'Failed to create!'
+      if @schedule.errors.any?
+        @schedule.errors.full_messages.each do |message|
+          flash[:danger] = message
+        end
+      end
+      # flash[:danger] = 'Failed to update!'
       redirect_to new_schedule_path
     end
   end
@@ -33,7 +38,11 @@ class SchedulesController < ApplicationController
       flash[:success] = 'You have edited schedule successfully'
       redirect_to schedules_path
     else
-      flash[:danger] = 'Failed to update!'
+      if @schedule.errors.any?
+        @schedule.errors.full_messages.each do |message|
+          flash[:danger] = message
+        end
+      end
       render 'edit'
     end
   end
@@ -64,6 +73,6 @@ class SchedulesController < ApplicationController
       @schedule = Schedule.find_by(id: params[:id])
     end
     def schedule_params
-      params.require(:schedule).permit(:classroom_id, :teacher_id, :date, :start, :end)
+      params.require(:schedule).permit(:classroom_id, :teacher_id, :date, :start, :finish, :subject)
     end
 end
