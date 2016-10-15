@@ -16,4 +16,3 @@ jQuery ->
         ['11:30', '13:00'],
     ]
     });
-  console.log $('#end_time').timepicker('getTime');

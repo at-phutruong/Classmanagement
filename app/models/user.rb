@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one :schedule
   belongs_to :role
   attr_accessor :remember_token
   before_save { self.email = email.downcase }

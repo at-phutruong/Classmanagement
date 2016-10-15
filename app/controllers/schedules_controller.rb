@@ -14,6 +14,7 @@ class SchedulesController < ApplicationController
 
   def create
     # binding.pry
+    params[:schedule][:user_id] = current_user.id
     @schedule = Schedule.new(schedule_params)
     if @schedule.save
       flash[:success] = 'You have created schedule successfully'
@@ -73,6 +74,6 @@ class SchedulesController < ApplicationController
       @schedule = Schedule.find_by(id: params[:id])
     end
     def schedule_params
-      params.require(:schedule).permit(:classroom_id, :teacher_id, :date, :start, :finish, :subject)
+      params.require(:schedule).permit(:classroom_id, :user_id, :date, :start, :finish, :subject)
     end
 end

@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20161015142507) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.integer  "number"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

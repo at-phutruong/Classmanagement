@@ -14,7 +14,7 @@
         <td><%= classroom.name %></td>
         <td><%= classroom.capacity %></td>
         <td><%= classroom.area %></td>
-        <% if current_user.role.eql? 'admin' %>
+        <% if current_user.role.name.eql? 'administrator' %>
           <td><%= link_to 'Show', classroom_path(classroom) %></td>
           <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
           <td><%= link_to 'Destroy', classroom_path(classroom), method: :delete, remote: true, format: :js %></td>
@@ -24,6 +24,6 @@
   </tbody>
 </table>
 <br>
-<% if current_user.role.eql? 'admin' %>
+<% if current_user.role.name.eql? 'administrator' %>
   <%= link_to 'New classroom', new_classroom_path %>
 <% end %>

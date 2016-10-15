@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home",    root_path %></li>
         <% if logged_in? %>
-          <% if (current_user.role.eql? 'lecturer' or current_user.role.eql? 'admin') %>
+          <% if (current_user.role.name.eql? 'lecturer' or current_user.role.name.eql? 'administrator') %>
             <li><%= link_to "Classrooms", classrooms_path %></li>
           <% end %>
             <li><%= link_to "Log out", logout_path, method: "delete" %></li>

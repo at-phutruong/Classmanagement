@@ -3,10 +3,18 @@
     <%= f.label :classroom %>
     <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
   </div>
-  <div class="schedule-teacher">
-    <%= f.label :Teacher %>
-    <%= f.collection_select :teacher_id, Teacher.all, :id, :name %>
-  </div>
+
+  <% if current_user.role.name.eql? 'administrator' %>
+    <div class="schedule-classroom">
+      <%= f.label :classroom %>
+      <%= f.collection_select :user_id, User.all, :id, :name %>
+    </div>
+    <% else %>
+    <div class="schedule-lecturer">
+      <%= f.label :Lecturer %>
+      <%= f.text_field :user_id, value: current_user.name, disabled: true %>
+    </div>
+  <% end %>
   <div>
     <%= f.label :Date %>
     <%= f.text_field :date, :class => 'datepicker', :placeholder => 'YYYY-MM-DD', required: true, pattern:'((2016|2017|2018|2019|202[0-9])-((0{0,1}[1-9])|10|11|12)-(((0{0,1}|1|2)[1-9])|10|20|30|31))|([a-zA-Z]{6,10}, \d{1,2} [a-zA-Z]{3,10}, \d{4})', title: "Please input the correct date format" %>
