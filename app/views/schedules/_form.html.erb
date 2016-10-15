@@ -7,7 +7,7 @@
   <% if current_user.role.name.eql? 'administrator' %>
     <div class="schedule-classroom">
       <%= f.label :classroom %>
-      <%= f.collection_select :user_id, User.all, :id, :name %>
+      <%= f.collection_select :user_id, User.all.select{|user| user.role.name.eql?'lecturer'}, :id, :name %>
     </div>
     <% else %>
     <div class="schedule-lecturer">
