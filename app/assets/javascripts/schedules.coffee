@@ -13,7 +13,7 @@ jQuery ->
     'step': 30;
     'dropdown': true
     'disableTimeRanges': [
-        ['11:30', '13:00']
+        ['11:30', '13:00'],
     ]
     });
   console.log $('#end_time').timepicker('getTime');

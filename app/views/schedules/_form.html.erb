@@ -9,15 +9,15 @@
   </div>
   <div>
     <%= f.label :Date %>
-    <%= f.text_field :date, :class => 'datepicker', :placeholder => 'Select Date', required: true %>
+    <%= f.text_field :date, :class => 'datepicker', :placeholder => 'YYYY-MM-DD', required: true, pattern:'((2016|2017|2018|2019|202[0-9])-((0{0,1}[1-9])|10|11|12)-(((0{0,1}|1|2)[1-9])|10|20|30|31))|([a-zA-Z]{6,10}, \d{1,2} [a-zA-Z]{3,10}, \d{4})', title: "Please input the correct date format" %>
   </div>
   <div class="start-time">
     <%= f.label :Start %>
-    <%= f.text_field :start, :class => 'timepicker start_time',id: 'start_time', placeholder: 'Select Start time', required: true%>
+    <%= f.text_field :start, :class => 'timepicker start_time', placeholder: 'HH-MM', required: true, pattern: '((07|08|09)|(1[0-7])):(00|30)', title: "Please input the correct time format" %>
   </div>
   <div class="end-time">
     <%= f.label :End %>
-    <%= f.text_field :end, :class => 'timepicker end_time', id: 'end_time', placeholder: 'Select End time', required: true %>
+    <%= f.text_field :end, :class => 'timepicker end_time', placeholder: 'HH-MM', required: true, pattern: '((07|08|09)|(1[0-7])):(00|30)', title: "Please input the correct time format" %>
   </div>
   <div class="action">
     <%= f.submit %>
