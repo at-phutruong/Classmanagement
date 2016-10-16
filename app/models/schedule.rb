@@ -20,7 +20,7 @@ class Schedule < ApplicationRecord
         schedule_finish_time = (schedule_finish_time[0] + schedule_finish_time[1]).to_i
         # binding.pry
         if classroom_id == schedule.classroom_id && date == schedule.date && ((schedule_start_time...schedule_finish_time) === (start_time)||(schedule_start_time + 1...schedule_finish_time) === (finish_time))
-          errors.add(:hour, 'has already taken')
+          errors.add(:hour, 'has already been taken!')
         end
       end
     end
@@ -29,12 +29,12 @@ class Schedule < ApplicationRecord
       start_time = start.split(":")
       finish_time = finish.split(":")
       if finish_time[0].to_i < start_time[0].to_i
-        errors.add(:finish_time, 'should be more than start time')
+        errors.add(:finish_time, 'must be more than start time')
       elsif finish_time[0].to_i == start_time[0].to_i && finish_time[1].to_i == start_time[1].to_i
-        errors.add(:finish_time, 'should be more than start time')
+        errors.add(:finish_time, 'must be more than start time')
         binding.pry
       elsif finish_time[0].to_i == start_time[0].to_i && finish_time[1].to_i < start_time[1].to_i
-        errors.add(:finish_time, 'should be more than start time')
+        errors.add(:finish_time, 'must be more than start time')
       end
     end
 end
