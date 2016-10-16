@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= will_paginate %>
+    <span class="pull-right"><%= will_paginate %></span>
     <% @schedules.each do |schedule| %>
       <tr class="<%= schedule.id %> td-index">
         <td class="counter"></td>
@@ -34,9 +34,10 @@
         <% end %>
       </tr>
     <% end %>
-    <%= will_paginate %>
+
   </tbody>
 </table>
+<span class="pull-right"><%= will_paginate %></span>
 <br>
 <% if (current_user.role.name.eql? 'lecturer' or current_user.role.name.eql? 'administrator') %>
   <%= link_to '', new_schedule_path, class: "btn btn-default btn-circle glyphicon glyphicon-plus" %>

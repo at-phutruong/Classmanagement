@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   # before_action :student_user,  only: :show
 
   def index
-    @schedules = Schedule.paginate(page: params[:page])
+    @schedules = Schedule.paginate(page: params[:page],:per_page => 10)
   end
 
   def new
