@@ -19,16 +19,9 @@
  @import "bootstrap";
  body {
    padding-top: 60px;
-  //  background: #76b852; /* fallback for old browsers */
-  //  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-  //  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  //  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  //  background: linear-gradient(to left, #76b852, #8DC26F);
-  //  font-family: "Roboto", sans-serif;
-  //  -webkit-font-smoothing: antialiased;
-  //  -moz-osx-font-smoothing: grayscale;
-  //  color: #fff;
  }
+
+ //-------------logo-------------------------
 .img-logo {
   padding:0 0 5px 0px;
 }
@@ -48,6 +41,7 @@
   text-decoration: none;
 }
 
+///-----------------navbar----------------------------
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   background-color: #76b852;
   color: #fff;
@@ -57,6 +51,7 @@
   color: #fff;
 }
 
+//---------------elements--------------------------
 table {
   border-collapse: collapse;
   width: 100%;
@@ -71,24 +66,6 @@ tr:nth-child(even){background-color: #f2f2f2}
 th {
   background-color: #4CAF50;
   color: white;
-}
-
-
-.counter:before {
-    counter-increment: section;
-    content: counter(section);
-}
-
-.btn-circle {
-  background-color: #4CAF50;
-  color: #fff;
-  width: 60px;
-  height: 60px;
-  padding: 10px 16px;
-  font-size: 20px;
-  line-height: 35px;
-  border-radius: 30px;
-  text-align: center;
 }
 
 input[type=text] {
@@ -115,6 +92,24 @@ select {
     background-color: #f1f1f1;
 }
 
+//------auto-increment----------------------
+.counter:before {
+    counter-increment: section;
+    content: counter(section);
+}
+
+//-----------Button-----------------
+.btn-circle {
+  background-color: #4CAF50;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  padding: 10px 16px;
+  font-size: 20px;
+  line-height: 35px;
+  border-radius: 30px;
+  text-align: center;
+}
 .btn-update, .btn-back{
   width: 33.3%;
     border-radius: 0px;
@@ -131,7 +126,7 @@ select {
 }
 
 
-//Hover rather than click
+//-------------Hover rather than click--------------------
 .dropdown-menu{
   width: 100%;
 }
@@ -177,8 +172,53 @@ select {
     top: 11px;
     left: -6px;
 }
-//---------------------------------------------------
 
+//-----------Notification--------------------------------------
+.success {
+    position: absolute;
+    z-index: 6001;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+.danger {
+    position: absolute;
+    z-index: 6001;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #f23232;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    color: #fff;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+.cssanimations.csstransforms .success,.danger {
+    -webkit-transform: translateY(-50px);
+    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+    -moz-transform:    translateY(-50px);
+    -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
+}
+
+
+@-webkit-keyframes slideDown {
+    0%, 100% { -webkit-transform: translateY(-50px); }
+    10%, 90% { -webkit-transform: translateY(0px); }
+}
+@-moz-keyframes slideDown {
+    0%, 100% { -moz-transform: translateY(-50px); }
+    10%, 90% { -moz-transform: translateY(0px); }
+}
 //
 // /*
 // body {

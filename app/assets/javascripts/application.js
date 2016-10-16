@@ -18,3 +18,4 @@
 //= require jquery.timepicker.js
 //= require turbolinks
 //= require_tree .
+$('#note').delay(3000).fadeOut('slow');
