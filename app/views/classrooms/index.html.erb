@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <th>Index</th>
       <th>Name</th>
       <th>Capacity</th>
       <th>Area</th>
@@ -13,13 +14,16 @@
   <tbody>
     <% @classroom.each do |classroom| %>
       <tr class="<%= classroom.id %>">
+        <td class="counter">
+
+        </td>
         <td><%= classroom.name %></td>
         <td><%= classroom.capacity %></td>
         <td><%= classroom.area %></td>
         <% if current_user.role.name.eql? 'administrator' %>
-          <td><%= link_to 'Show', classroom_path(classroom) %></td>
-          <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
-          <td><%= link_to 'Destroy', classroom_path(classroom), method: :delete, remote: true, format: :js %></td>
+          <td><%= link_to 'Show', classroom_path(classroom), class: 'btn btn-default' %></td>
+          <td><%= link_to 'Edit', edit_classroom_path(classroom), class: 'btn btn-default' %></td>
+          <td><%= link_to 'Destroy', classroom_path(classroom), class: 'btn btn-default', method: :delete, remote: true, format: :js %></td>
         <% end %>
       </tr>
     <% end %>
@@ -27,5 +31,5 @@
 </table>
 <br>
 <% if current_user.role.name.eql? 'administrator' %>
-  <%= link_to 'New classroom', new_classroom_path %>
+  <%= link_to '', new_classroom_path, class: 'btn btn-default btn-circle glyphicon glyphicon-plus' %>
 <% end %>
