@@ -1,7 +1,7 @@
 jQuery ->
   $('.datepicker').datepicker({
     'dateFormat': 'DD, d MM, yy'
-    });
+  });
 
   $('.timepicker').timepicker({
     'scrollbar': true,
@@ -15,4 +15,4 @@ jQuery ->
     'disableTimeRanges': [
         ['11:30', '13:00'],
     ]
-    });
+  });

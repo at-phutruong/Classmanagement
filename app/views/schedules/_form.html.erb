@@ -1,37 +1,24 @@
-<%= form_for(schedule) do |f| %>
-  <div class="schedule-classroom">
-    <%= f.label :classroom %>
-    <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
-  </div>
-
-  <% if current_user.role.name.eql? 'administrator' %>
-    <div class="schedule-classroom">
-      <%= f.label :classroom %>
+<div class="form">
+  <%= form_for(schedule) do |f| %>
+    <%= f.label :Classroom %>
+    <%= f.collection_select :classroom_id, Classroom.all, :id, :name, class: 'hover-color' %>
+    <% if current_user.role.name.eql? 'administrator' %>
+      <%= f.label :Lecturer %>
       <%= f.collection_select :user_id, User.all.select{|user| user.role.name.eql?'lecturer'}, :id, :name %>
-    </div>
     <% else %>
-    <div class="schedule-lecturer">
       <%= f.label :Lecturer %>
       <%= f.text_field :user_id, value: current_user.name, disabled: true %>
-    </div>
-  <% end %>
-  <div>
+    <% end %>
     <%= f.label :Date %>
     <%= f.text_field :date, :class => 'datepicker', :placeholder => 'YYYY-MM-DD', required: true, pattern:'((2016|2017|2018|2019|202[0-9])-((0{0,1}[1-9])|10|11|12)-(((0{0,1}|1|2)[1-9])|10|20|30|31))|([a-zA-Z]{6,10}, \d{1,2} [a-zA-Z]{3,10}, \d{4})', title: "Please input the correct date format" %>
-  </div>
-  <div>
     <%= f.label :subject %>
     <%= f.text_field :subject, :placeholder => 'Subject', required: true%>
-  </div>
-  <div class="start-time">
     <%= f.label :Start %>
     <%= f.text_field :start, :class => 'timepicker start_time', placeholder: 'HH-MM', required: true, pattern: '((07|08|09)|(1[0-7])):(00|30)', title: "Please input the correct time format" %>
-  </div>
-  <div class="end-time">
     <%= f.label :finish %>
     <%= f.text_field :finish, :class => 'timepicker end_time', placeholder: 'HH-MM', required: true, pattern: '((07|08|09)|(1[0-7])):(00|30)', title: "Please input the correct time format" %>
-  </div>
   <div class="action">
-    <%= f.submit %>
+    <%= f.submit params[:action].eql?('edit') ? 'Edit': 'Create', class: 'btn btn-default btn-update'%><button type="reset" value="Reset" class="btn btn-default btn-update">Reset</button><%= link_to 'Back', schedules_path, class: 'btn btn-default btn-back'%>
   </div>
-<% end %>
+  <% end %>
+</div>

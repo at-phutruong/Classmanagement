@@ -1,7 +1,7 @@
 <h1>List of Schedules</h1>
-<table>
+<table class="table-index">
   <thead>
-    <tr>
+    <tr class="th-index">
       <th>
         Index
       </th>
@@ -19,7 +19,7 @@
   <tbody>
     <%= will_paginate %>
     <% @schedules.each do |schedule| %>
-      <tr class="<%= schedule.id %>">
+      <tr class="<%= schedule.id %> td-index">
         <td class="counter"></td>
         <td><%= schedule.date %></td>
         <td><%= schedule.classroom.name %></td>
