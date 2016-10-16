@@ -15,6 +15,14 @@
           <%=message%>
         </div>
       <%end%>
+      <aside id="sticky-social">
+        <div class="sticky-container">
+          <ul class="sticky">
+            <li><a href="http://fb.com/phugodness" target="_blank"><%= image_tag 'fb.png', width: "32", height: "32"%><p class="span">Facebook</p></a> </li>
+            <li><a href="http://twitter.com/phugodness" target="_blank"><%= image_tag 'tw.png', width: "32", height: "32"%><p class="span">Twitter</p></a></li>
+            <li><a href="mailto:phugodness@gmail.com?Subject=Hello%20My%20Pal" target="_blank"><%= image_tag 'mail.png', width: "32", height: "32"%><p class="span">Mail</p></a></li>
+          </ul>
+      </aside>
       <%= yield %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </div>

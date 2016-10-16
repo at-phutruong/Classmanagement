@@ -18,7 +18,7 @@
     <%= f.label :finish %>
     <%= f.text_field :finish, :class => 'timepicker end_time', placeholder: 'HH-MM', required: true, pattern: '((07|08|09)|(1[0-7])):(00|30)', title: "Please input the correct time format" %>
   <div class="action">
-    <%= f.submit params[:action].eql?('edit') ? 'Edit': 'Create', class: 'btn btn-default btn-update'%><button type="reset" value="Reset" class="btn btn-default btn-update">Reset</button><%= link_to 'Back', schedules_path, class: 'btn btn-default btn-back'%>
+    <%= f.submit params[:action].eql?('edit') ? 'Edit': 'Create', class: 'btn btn-default btn-update btn-float'%><button type="reset" value="Reset" class="btn btn-default btn-update">Reset</button><%= link_to 'Back', schedules_path, class: 'btn btn-default btn-back'%>
   </div>
   <% end %>
 </div>
